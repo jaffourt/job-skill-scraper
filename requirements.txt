@@ -1,0 +1,7 @@
+bs4
+pandas
+tqdm
+sklearn
+gensim
+matplotlib
+requests
