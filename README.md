@@ -1,21 +1,23 @@
 # Web Scraping and Topic Modeling
 
-1. Compile the skills text into a corpus after scraping indeed for a title
+## Overview & Results
+1. Compile the skills text into a corpus after scraping indeed for job title
 2. Text vectorization into numerical feature vectors using term frequency inverse document frequency  
    1. term frequency * inverse document frequency 
    2. Words very frequently occurring in the corpus approach 0, infrequent words approach 1 
    3. UNORDERED vector (e.g., dog has bone == bone dog has)
-3. Non-negative matrix factorization which produces k components with W weights, the factorization of the input data NxM, e.g., NxM -> W x k * k x N
+3. Non-negative matrix factorization which produces `k` components with `W` weights, the factorization of the input data `N x M`, e.g., `N x M -> W x k * k x N`
 4. Train a w2v model using the corpus for benchmarking
 5. Within each NMF cluster (e.g., each topic) average the w2v similarity ranking between each combination of words to calculate a ‘topic coherence’ 
    1. mean topic coherence within each topic, and compute a mean coherence for the model across all topics
 
-### Results
+#### Example topics in job skill corpus with token length of 1
+![Topics in NMF Model](plots/best_model_skills.png)
 
-[Topics in NMF Model](plots/best_model_skills.png)
+#### Model Coherence for varying number of Job Skill Topics
+![Model Coherence](plots/model_coherences.png)
 
-[Model Coherence](plots/model_coherences.png)
-
+## Methods
 ### (1) Webscraping
 The webscraper uses BeautifulSoup to parse content from the online job board Indeed. Indeed.com allows for a number of 
 search filters, but for this example only 3 are used. A search string (Machine Learning Engineer), a location (United States),
