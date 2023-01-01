@@ -1,6 +1,9 @@
-# Web Scraping and Topic Modeling
+# SkillSurf
 
-## Overview & Results
+## Overview
+SkillSurf is a machine learning tool that helps job seekers and professionals identify the most important skills and phrases for a specific position title. By scraping job descriptions from popular job boards and applying natural language processing techniques, SkillSurf produces a list of key topics and skills that are most commonly associated with a given job title. These topics and skills can be used to guide career development, inform job searches, and identify areas for improvement. Whether you're looking to land your dream job or advance your career, SkillSurf can help you identify the skills and knowledge you need to succeed.
+
+## Methods and Results
 1. Compile the skills text into a corpus after scraping indeed for job title
 2. Text vectorization into numerical feature vectors using term frequency inverse document frequency  
    1. term frequency * inverse document frequency 
@@ -11,13 +14,6 @@
 5. Within each NMF cluster (e.g., each topic) average the w2v similarity ranking between each combination of words to calculate a ‘topic coherence’ 
    1. mean topic coherence within each topic, and compute a mean coherence for the model across all topics
 
-#### Example topics in job skill corpus with token length of 1
-![Topics in NMF Model](plots/best_model_skills.png)
-
-#### Model Coherence for varying number of Job Skill Topics
-![Model Coherence](plots/model_coherences.png)
-
-## Methods
 ### (1) Webscraping
 The webscraper uses BeautifulSoup to parse content from the online job board Indeed. Indeed.com allows for a number of 
 search filters, but for this example only 3 are used. A search string (Machine Learning Engineer), a location (United States),
@@ -114,3 +110,9 @@ for (k,W,H) in topic_models:
     coherences.append( calculate_coherence( model, term_rankings ) )
     print("K=%02d: Coherence=%.4f" % ( k, coherences[-1] ) )
 ```
+
+#### Example topics in job skill corpus with token length of 1
+![Topics in NMF Model](plots/best_model_skills.png)
+
+#### Model Coherence for varying number of Job Skill Topics
+![Model Coherence](plots/model_coherences.png)
