@@ -1,8 +1,7 @@
 # SkillSurf
 
 ## Overview
-SkillSurf is a machine learning tool that helps job seekers and professionals identify the most important skills and phrases for a specific position title. By scraping job descriptions from popular job boards and applying natural language processing techniques, SkillSurf produces a list of key topics and skills that are most commonly associated with a given job title. These topics and skills can be used to guide career development, inform job searches, and identify areas for improvement. Whether you're looking to land your dream job or advance your career, SkillSurf can help you identify the skills and knowledge you need to succeed.
-
+SkillSurf is a machine learning tool that helps job seekers and professionals identify the most important skills and phrases for a specific position title. By scraping job descriptions from popular job boards and applying natural language processing techniques, SkillSurf produces a list of key topics and skills that are most commonly associated with a given job title. These topics and skills can be used to guide career development, inform job searches, and identify areas for improvement. 
 ## Methods and Results
 1. Compile the skills text into a corpus after scraping indeed for job title
 2. Text vectorization into numerical feature vectors using term frequency inverse document frequency  
