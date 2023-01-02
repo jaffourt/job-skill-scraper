@@ -109,9 +109,10 @@ for (k,W,H) in topic_models:
     coherences.append( calculate_coherence( model, term_rankings ) )
     print("K=%02d: Coherence=%.4f" % ( k, coherences[-1] ) )
 ```
-
-#### Example topics in job skill corpus with token length of 1
-![Topics in NMF Model](plots/best_model_skills.png)
-
 #### Model Coherence for varying number of Job Skill Topics
 ![Model Coherence](plots/model_coherences.png)
+
+We can visually see that using 14 topics produces the highest topic coherence for this job title.
+
+#### Highest topic coherence clusters with token length of 1
+![Topics in NMF Model](plots/best_model_skills.png)
